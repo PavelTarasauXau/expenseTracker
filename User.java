@@ -1,33 +1,22 @@
-import java.util.Scanner;
-
 public class User {
+    private String login;
+    private String password;
 
-    String login;
-    String password;
-
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
 
     public String getLogin() {
         return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-    public static boolean authorization(){
-        boolean access = false;
-        return access;
+    // Метод для авторизации
+    public boolean authorize(String inputLogin, String inputPassword) {
+        return this.login.equals(inputLogin) && this.password.equals(inputPassword);
     }
 }

@@ -12,14 +12,15 @@ public class Main {
             System.out.print("Input password: ");
             String pass = in.nextLine();
 
-            if (user.getLogin().equals(log) && user.getPassword().equals(pass)) {
+            if (user.authorize(log, pass)) {
                 System.out.println("Successfully logged in!");
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Try again");
             }
         }
+        in.close();
     }
 }
+
 
